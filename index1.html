@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+    <label>
+        First name:
+        <input type="text" id="fname" value="Mary">
+    </label>
+    <br>
+    <label>
+        Last name:
+        <input type="text" id="lname" value="Poppins">
+    </label>
+    <p id="greeting"><b>Good morning, Mary Poppins.</b></p>
+
+    <script>
+        const fnameInput = document.getElementById('fname');
+        const lnameInput = document.getElementById('lname');
+        const greeting = document.getElementById('greeting');
+
+        function updateGreeting() {
+            greeting.innerHTML = <b>Good morning, ${fnameInput.value} ${lnameInput.value}.</b>;
+        }
+
+        fnameInput.addEventListener('input', updateGreeting);
+        lnameInput.addEventListener('input', updateGreeting);
+    </script>
+</body>
+</html>
